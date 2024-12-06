@@ -1,49 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.game-container {
     text-align: center;
-    background-color: #f4f4f4;
 }
 
-h1 {
-    margin-top: 20px;
-}
-
-.game-board {
+.board {
     display: grid;
-    grid-template-columns: repeat(8, 60px);
-    grid-template-rows: repeat(8, 60px);
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
     gap: 5px;
-    margin: 20px auto;
-    width: 500px;
-    height: 500px;
+    margin-top: 20px;
+    position: relative;
 }
 
 .fruit {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
-}
-
-.fruit.apple {
-    background-color: red;
-}
-
-.fruit.banana {
-    background-color: yellow;
-}
-
-.fruit.cherry {
-    background-color: pink;
-}
-
-.fruit.grape {
-    background-color: purple;
-}
-
-.fruit.orange {
-    background-color: orange;
 }
 
 .fruit.exploding {
@@ -59,4 +48,16 @@ h1 {
         transform: scale(2);
         opacity: 0;
     }
+}
+
+.fruit.apple {
+    background-image: url('https://via.placeholder.com/80x80/FF0000?text=Apple');
+}
+
+.fruit.banana {
+    background-image: url('https://via.placeholder.com/80x80/FFFF00?text=Banana');
+}
+
+.fruit.cherry {
+    background-image: url('https://via.placeholder.com/80x80/FF6347?text=Cherry');
 }
