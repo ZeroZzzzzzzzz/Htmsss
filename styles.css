@@ -1,20 +1,62 @@
 body {
-    text-align: center;
     font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
 }
-#gameBoard {
+
+h1 {
+    margin-top: 20px;
+}
+
+.game-board {
     display: grid;
-    grid-template-columns: repeat(6, 50px);
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
     gap: 5px;
     margin: 20px auto;
+    width: 500px;
+    height: 500px;
 }
-.tile {
+
+.fruit {
     width: 50px;
     height: 50px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.fruit.apple {
+    background-color: red;
+}
+
+.fruit.banana {
+    background-color: yellow;
+}
+
+.fruit.cherry {
+    background-color: pink;
+}
+
+.fruit.grape {
+    background-color: purple;
+}
+
+.fruit.orange {
+    background-color: orange;
+}
+
+.fruit.exploding {
+    animation: explode 0.5s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
 }
